@@ -66,11 +66,8 @@ nav {
     font-size: 24px;
     opacity: 0;
     line-height: 1.2;
-    /* Keep cursor tight to text */
     vertical-align: middle;
-    /* Align cursor with text */
     padding-bottom: 0;
-    /* Padding won't affect cursor height */
 }
 
 .typewriter-desc.typing {
@@ -119,12 +116,10 @@ nav {
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s;
     box-shadow: 0 0 5px rgba(107, 142, 35, 0.6);
-    /* default glow */
 }
 
 .btn-download:hover {
     background-color: #556b2f;
-    /* darker olive */
     color: white;
     transform: translateY(-2px);
     animation: pulse-glow 1.5s infinite alternate;
@@ -140,9 +135,22 @@ nav {
     }
 }
 
-.btn-download svg {
-    fill: white;
+/* Mobile Fix: Keep typing & cursor effect but wrap text inside screen */
+@media (max-width: 576px) {
+    .typewriter-desc {
+        white-space: normal;
+        /* allow wrapping */
+        text-align: center;
+        /* keep centered */
+        display: inline-block;
+        /* keep typing effect */
+        word-break: break-word;
+        /* break long words if needed */
+        border-right: none !important;
+        /* hide blinking cursor */
+    }
 }
+
 
 .aboutme {
     padding-top: 100px;
