@@ -287,6 +287,31 @@ nav {
     font-size: 16px;
 }
 
+/* Mobile Skill Card Fix */
+@media (max-width: 576px) {
+    .skill-card {
+        width: 100%;           /* take full container width */
+        max-width: 350px;      /* limit size */
+        min-width: unset;      /* remove fixed min-width */
+        margin: 0 auto;        /* center horizontally */
+        display: flex;         /* flex to make equal height */
+        flex-direction: column;
+        height: 100%;          /* stretch evenly */
+    }
+
+    /* Ensure image & text layout stays neat */
+    .skill-card img {
+        flex-shrink: 0;        /* prevent image from shrinking */
+    }
+
+    .skill-card .card-body {
+        flex-grow: 1;          /* fill remaining space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 /* Olive Button */
 .btn-olive {
     background-color: olive;
