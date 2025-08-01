@@ -464,7 +464,7 @@ nav {
         align-items: center;
     }
 
-    .projects-cards > .col-12 {
+    .projects-cards>.col-12 {
         display: flex;
         justify-content: center;
     }
@@ -498,7 +498,7 @@ nav {
     }
 
     /* Make Bootstrap col-md-6 act as flex to stretch cards */
-    .projects-cards > .col-md-6 {
+    .projects-cards>.col-md-6 {
         display: flex;
     }
 
@@ -583,6 +583,31 @@ nav {
     background-color: #556b2f;
     transform: translateY(-2px);
     box-shadow: 0 0 10px olive;
+}
+
+/* Mobile adjustments for contact form */
+@media (max-width: 576px) {
+    .contact {
+        padding: 50px 15px;
+        /* Reduce padding for small devices */
+    }
+
+    .contact-form .col-12 {
+        padding: 0;
+        /* Remove extra padding inside column */
+    }
+
+    .custom-input {
+        width: 100%;
+        /* Make inputs span full width */
+        box-sizing: border-box;
+    }
+
+    .btn-download {
+        width: 100%;
+        /* Full-width button for mobile */
+        justify-content: center;
+    }
 }
 
 .footer {
