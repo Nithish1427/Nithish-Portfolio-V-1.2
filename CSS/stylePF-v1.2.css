@@ -162,57 +162,75 @@ nav {
     padding-top: 80px;
     padding-bottom: 35px;
     overflow: hidden;
-    /* Ensures text is hidden until typed */
     white-space: nowrap;
-    /* Keeps text on a single line */
     margin: 0 auto;
-    /* Centers the container */
     width: fit-content;
-    /* Adjusts width to content */
 }
 
 .typewriter-text {
     display: inline-block;
     overflow: hidden;
     border-right: 2px solid olive;
-    /* cursor */
     vertical-align: bottom;
-    /* aligns cursor with text baseline */
     line-height: 1;
-    /* makes cursor height match text height */
     white-space: nowrap;
     letter-spacing: .05em;
     font-size: 30px;
     animation: typing 2.5s steps(20, end), blink-caret .75s step-end infinite;
 }
 
-/* The typing effect */
 @keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: olive;
-    }
+    from, to { border-color: transparent; }
+    50% { border-color: olive; }
 }
 
-/* About me content */
 .pb-3 {
     font-size: 16px;
+}
+
+/* ✅ Profile image as background */
+.profile-pic-background {
+    width: 410px;                          /* your original size */
+    aspect-ratio: 1 / 1;                   /* perfect square */
+    border: 1.4px solid olive;               /* olive border */
+    border-radius: 50%;                    /* perfect circle */
+    box-shadow: 0 0 20px rgba(107, 142, 35, 0.8);
+    animation: glowPulse 3s ease-in-out infinite;
+    background: url("../Images/WhatsApp_Profile_Image.jpeg") no-repeat center;
+    background-size: cover;                /* fill without distortion */
+    margin: 0 auto;                        /* center container */
+}
+
+/* Smooth glow animation */
+@keyframes glowPulse {
+    0%   { box-shadow: 0 0 15px rgba(107, 142, 35, 0.6); }
+    50%  { box-shadow: 0 0 35px rgba(107, 142, 35, 1); }
+    100% { box-shadow: 0 0 15px rgba(107, 142, 35, 0.6); }
+}
+
+/* ✅ Mobile Fix: Wrap text & hide tall cursor */
+@media (max-width: 576px) {
+    .typewriter-container {
+        white-space: normal;
+        width: 100%;
+    }
+
+    .typewriter-text {
+        white-space: normal;
+        border-right: none !important;
+        text-align: center;
+        display: inline-block;
+    }
+
+    /* Mobile profile pic responsiveness */
+    .profile-pic-background {
+        width: 90%; /* fit inside screen */
+    }
 }
 
 .skills {
