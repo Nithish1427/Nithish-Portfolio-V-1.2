@@ -47,6 +47,16 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".skill-card .card-title").forEach(title => {
+        const text = title.textContent.trim();
+        // Check if it's a single word AND longer than 8 characters
+        if (!text.includes(" ") && text.length > 8) {
+            title.classList.add("long-title");
+        }
+    });
+});
+
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }

@@ -180,13 +180,25 @@ nav {
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: olive; }
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: olive;
+    }
 }
 
 .pb-3 {
@@ -195,22 +207,36 @@ nav {
 
 /* ✅ Profile image as background */
 .profile-pic-background {
-    width: 410px;                          /* your original size */
-    aspect-ratio: 1 / 1;                   /* perfect square */
-    border: 1.4px solid olive;               /* olive border */
-    border-radius: 50%;                    /* perfect circle */
+    width: 410px;
+    /* your original size */
+    aspect-ratio: 1 / 1;
+    /* perfect square */
+    border: 1.4px solid olive;
+    /* olive border */
+    border-radius: 50%;
+    /* perfect circle */
     box-shadow: 0 0 20px rgba(107, 142, 35, 0.8);
     animation: glowPulse 3s ease-in-out infinite;
     background: url("../Images/WhatsApp_Profile_Image.jpeg") no-repeat center;
-    background-size: cover;                /* fill without distortion */
-    margin: 0 auto;                        /* center container */
+    background-size: cover;
+    /* fill without distortion */
+    margin: 0 auto;
+    /* center container */
 }
 
 /* Smooth glow animation */
 @keyframes glowPulse {
-    0%   { box-shadow: 0 0 15px rgba(107, 142, 35, 0.6); }
-    50%  { box-shadow: 0 0 35px rgba(107, 142, 35, 1); }
-    100% { box-shadow: 0 0 15px rgba(107, 142, 35, 0.6); }
+    0% {
+        box-shadow: 0 0 15px rgba(107, 142, 35, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(107, 142, 35, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 15px rgba(107, 142, 35, 0.6);
+    }
 }
 
 /* ✅ Mobile Fix: Wrap text & hide tall cursor */
@@ -229,7 +255,8 @@ nav {
 
     /* Mobile profile pic responsiveness */
     .profile-pic-background {
-        width: 90%; /* fit inside screen */
+        width: 90%;
+        /* fit inside screen */
     }
 }
 
@@ -290,25 +317,54 @@ nav {
 /* Mobile Skill Card Fix */
 @media (max-width: 576px) {
     .skill-card {
-        width: 100%;           /* take full container width */
-        max-width: 350px;      /* limit size */
-        min-width: unset;      /* remove fixed min-width */
-        margin: 0 auto;        /* center horizontally */
-        display: flex;         /* flex to make equal height */
+        width: 100%;
+        /* take full container width */
+        max-width: 350px;
+        /* limit size */
+        min-width: unset;
+        /* remove fixed min-width */
+        margin: 0 auto;
+        /* center horizontally */
+        display: flex;
+        /* flex to make equal height */
         flex-direction: column;
-        height: 100%;          /* stretch evenly */
+        height: 100%;
+        /* stretch evenly */
     }
 
     /* Ensure image & text layout stays neat */
     .skill-card img {
-        flex-shrink: 0;        /* prevent image from shrinking */
+        flex-shrink: 0;
+        /* prevent image from shrinking */
     }
 
     .skill-card .card-body {
-        flex-grow: 1;          /* fill remaining space */
+        flex-grow: 1;
+        /* fill remaining space */
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    @media (max-width: 576px) {
+
+        /* Target long single-word titles inside skill cards */
+        .skill-card .card-title {
+            white-space: normal;
+            /* default for short names */
+        }
+
+        /* Apply nowrap only for long titles */
+        .skill-card .card-title.long-title {
+            white-space: nowrap;
+            /* keep it in one line */
+            font-size: 15px;
+            /* slightly smaller to fit */
+            text-overflow: ellipsis;
+            /* add ... if too long */
+            overflow: hidden;
+            /* prevent overflow */
+        }
     }
 }
 
