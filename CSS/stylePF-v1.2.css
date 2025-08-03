@@ -211,7 +211,7 @@ nav {
     /* your original size */
     aspect-ratio: 1 / 1;
     /* perfect square */
-    border: 1.4px solid olive;
+    /* border: 1.4px solid olive; */
     /* olive border */
     border-radius: 50%;
     /* perfect circle */
