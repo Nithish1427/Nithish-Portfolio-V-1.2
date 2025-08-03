@@ -456,6 +456,23 @@ nav {
     color: darkolivegreen;
 }
 
+/* View Project button */
+.btn-view-project {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: olive;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-project:hover {
+    background-color: #556b2f;
+    /* slightly darker olive */
+}
+
 /* Small devices (mobile) - 1 card per row */
 @media (max-width: 767px) {
     .projects-cards {
@@ -619,7 +636,9 @@ nav {
 
 @media (max-width: 576px) {
     .footer {
-        padding: 20px 10px; /* Slightly reduced padding on mobile */
-        font-size: 14px; /* Slightly smaller text for better fit */
+        padding: 20px 10px;
+        /* Slightly reduced padding on mobile */
+        font-size: 14px;
+        /* Slightly smaller text for better fit */
     }
 }
